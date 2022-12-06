@@ -11,12 +11,15 @@ def compound_int(P, r, n, t):
     """
     value = P * (pow((1 + (r/n)), n * t))
     interest = value - P
-    # print("Compounded interest is", interest)
+    ROI = 100 * (value - P) / (P)
+
     print(f"The compounded interest is {round(interest, 2)}")
     print("Initial investment was", P)
     print(f"The final value will be {round(value, 2)}")
+    print(f"Your Return on Investment (ROI) would be: {round(ROI, 2)} % ")
 
 def compound_int_prompts():
+
     principle = int(input('Enter how much you would like to invest: '))
     #rate = (float(input("Enter expected interest rate (%) ")))/100
     # What if the input chose the name of the stock one wants to invest in and based on the choice, the rate for that stick is used when
