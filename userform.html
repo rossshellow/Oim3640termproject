@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Form</title>
+    <style>
+      body {
+        background-color: skyblue;
+      }
+      h1, h2 {
+        text-align: center;
+        color: black;
+      }
+      p {
+        margin-left: 25%;
+        margin-right: 25%;
+        color: black;
+      }
+      form {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: white;
+        margin-left: 25%;
+        margin-right: 25%;
+        padding: 10px 20px;
+        border: 1px solid black;
+      }
+      form > div {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Investment Calculator</h1>
+    <p>This website will allow you to calculate the value of your investment into some of the most popular index funds. </p>
+    <p> Disclaimer: The rate of return is based on historical data and therefore may not be representative of future performance. </p>
+    <form action="" method="POST">
+      <div>
+        <label for="principal">Principal Investment</label>
+        <input
+          type="number"
+          id="principal"
+          name="principal"
+          placeholder="Enter principal"
+        />
+      </div>
+      <div>
+        <label for="stock">Which index would you like to invest in? &nbsp; </label>
+        <select id="stock" name="stock">
+            <option value="VOO">VOO</option>
+            <option value="QQQ">QQQ</option>
+            <option value="SPY">SPY</option>
+            <option value="VTI">VTI</option>
+        </select>
+      </div>
+      <div>
+        <label for="years">Number of Years</label>
+        <input
+          type="number"
+          id="years"
+          name="years"
+          placeholder="Enter number of years"
+        />
+      </div>
+      <div>
+        <label for="frequency">Frequency</label>
+        <input
+          type="number"
+          id="frequency"
+          name="frequency"
+          placeholder="Compounding period"
+        />
+      </div>
+      <div>
+        <button name="submit-btn" type="submit">Calculate</button>
+      </div>
+      
+      <p> Final Value: {{ result }} </p>
+    </form>
+    <br>
+    <h2>Description of Index Funds</h2>
+    <p>VOO/SPY: Invests in stocks in the S&P 500 Index, representing 500 of the largest U.S. companies. Goal is to closely track the index's return, which is considered a gauge of overall U.S. stock returns. More appropriate for long-term goals where your money's growth is essential.</p>
+    <p>VTI: Seeks to track the performance of a benchmark index that measures the investment return of the overall stock market. Creates exposure to entire stock market. </p>
+    <p>QQQ: Tracks the Nasdaq 100 Index. It has 102 holdings and is the fourth-most popular ETF in the world. The index excludes financial companies and is based on market capitalization. Like the Nasdaq 100, QQQ holdings are heavily weighted toward large-cap technology companies.</p>
+  </body>
+</html>
