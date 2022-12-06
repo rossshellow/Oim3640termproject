@@ -25,21 +25,23 @@ def compound_int_prompts():
     # What if the input chose the name of the stock one wants to invest in and based on the choice, the rate for that stick is used when
     # the code runs
     r_input = (input('From the following options, enter which stock you would like to invest in: VOO, QQQ, VTI,or SPY: ')) 
-    if r_input == 'VOO' or 'voo':
+    r_input = r_input.lower()
+    if r_input == 'voo':
         rate = 10/100
-    elif r_input == 'QQQ' or 'qqq':
+    elif r_input == 'qqq':
         rate = 13/100
-    elif r_input == 'VTI' or 'vti':
+    elif r_input == 'vti':
         rate = 9.79/100
-    elif r_input == 'SPY' or 'spy':
+    elif r_input == 'spy':
         rate = 10/100
     
     n_input = (input('Enter your desired compounding period: Daily, monthly, or annually: '))
-    if n_input == 'annually' or 'Annually' or 'ANNUALLY':
+    n_input = n_input.lower()
+    if n_input == 'annually':
         frequency = 1 
-    elif n_input == 'monthly' or 'Monthly' or 'MONTHLY':
+    elif n_input == 'monthly':
         frequency = 12
-    elif n_input == 'daily' or 'Daily' or 'MONTHLY':
+    elif n_input == 'daily':
         frequency = 365
     time = float(input('Enter years of investment: '))
 
